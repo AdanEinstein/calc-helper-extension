@@ -1,0 +1,73 @@
+{
+    "manifest_version": 3,
+    "name": "Calculadora Embutida",
+    "version": "1.0",
+    "description": "Uma calculadora que interage com a página atual aberta.",
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "calc-helper.js"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ],
+    "action": {
+        "default_icon": {
+            "16": "calc.svg",
+            "48": "calc.svg",
+            "128": "calc.svg"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "css": [
+                "styles.css"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
+    "commands": {
+        "activate_extension": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+Y"
+            },
+            "description": "Ativar a extensão"
+        },
+        "deactivate_extension": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+U"
+            },
+            "description": "Desativar a extensão"
+        },
+        "minimize_details": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+Z"
+            },
+            "description": "Minimizar/Maximizar os detalhes"
+        },
+        "toggle_log": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+L"
+            },
+            "description": "Ativar/Desativar o log"
+        }
+    },
+    "background": {
+        "service_worker": "background.js"
+    }
+}
