@@ -7,7 +7,7 @@ import Log from "./components/log";
 import { LogProvider } from "./providers/LogProvider";
 
 export default function App() {
-  const [isActivated, setIsActivated] = createSignal(true);
+  const [isActivated, setIsActivated] = createSignal(false);
 
   createEffect(() => {
     window.addEventListener("message", (event) => {
