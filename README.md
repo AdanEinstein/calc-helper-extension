@@ -1,36 +1,41 @@
-## Usage
+# Calculadora Interativa para Chrome
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+## Descrição
+Uma extensão para Google Chrome que permite realizar cálculos diretamente na página atual.
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+## Recursos
+- Seleciona números na página para realizar operações matemáticas.
+- Suporte para operações básicas: adição (+), subtração (-), multiplicação (*) e divisão (/).
+- Teclas de atalho para facilitar o uso:
+  - `Ctrl` para selecionar os números.
+  - `Esc` para restaurar os valores.
+  - `Ctrl + Shift + Y` para ativar a extensão.
+  - `Ctrl + Shift + U` para desativar a extensão.
+  - `Ctrl + Shift + L` para minimizar/maximizar o histórico.
+  - `Ctrl + Shift + Z` para minimizar/maximizar a ajuda.
+- Interface minimalista e intuitiva.
 
-```bash
-$ npm install # or pnpm install or yarn install
-```
+## Como Usar
+1. Ative a extensão usando `Ctrl + Shift + Y`.
+2. Selecione os números desejados na página.
+3. Escolha uma operação (+, -, *, /).
+4. Veja o resultado atualizado na interface.
+5. Utilize as teclas de atalho para melhor experiência.
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+## Estilo simples
+![calc-helper](https://lh3.googleusercontent.com/pw/AP1GczMnp1GTCjvNYkUfShDYJ7psyTQ7kll0pMK6-dckv8xc5oZbIH49VrcLJX75UVxf0tc_vP2geX4SQiHeyeF_MPMj4Ygn5wvSSiddDrv-Y9VK9K48QNhZgEozcB9rJxKyWfFGnfoPelyY17wbXrV-fFVhcg=w1317-h612-s-no-gm?authuser=0)
 
-## Available Scripts
+## Casos de uso
+![calc-helper](https://lh3.googleusercontent.com/pw/AP1GczNKCL4dIEhTFSBvrPuuP-yrY6HpAaBrBRMCyVLgK9Y7WrK41tRPgtHKxDSXTIZMN8sNCPXug4AJA5SPF3q-Vdr6wouGiGGwfXXJI4hbnvw4ea2yRiVA1FTF_9T6RG3ywcC2_mPtCQ9vRRvxqMLLJ_K39A=w1312-h612-s-no-gm?authuser=0)
 
-In the project directory, you can run:
+![calc-helper](https://lh3.googleusercontent.com/pw/AP1GczMCSmMOb40PQz6acByGlFEZZk26Qvef-y9PK-mhG_hfBFTfGiZiWFgdt6SkodUcTE0cfgTYwHcK1Ij6OqCZXuGIEI52brlaWQ2ymRoyz9PoZiTY92ChUxuScwVaHZutjQg1w2A5AzctSricf-hKOyLTLw=w1312-h612-s-no-gm?authuser=0)
 
-### `npm run dev` or `npm start`
+![calc-helper](https://lh3.googleusercontent.com/pw/AP1GczPPqPqknvu63fLS5fqcO78pE9CcxikRHurMlNbrH0LmSyoqgMprgxiowNkGsDYYlRQ1QgtLYPc6MDSeCOCPrl_mFyiSBIvIGBvZ6POBGQ6Mp850HzlMVBFGbRUKcyFgSVRvw19uM4a4rYgakithoUXzbw=w1312-h612-s-no-gm?authuser=0)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
+## Desenvolvedor
+Criado por [AdanEinstein](http://www.linkedin.com/in/adaneinstein).
 
-### `npm run build`
+## Licença
+Este projeto é distribuído sob a licença MIT.
 
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-## Deployment
-
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
-
-## This project was created with the [Solid CLI](https://solid-cli.netlify.app)
