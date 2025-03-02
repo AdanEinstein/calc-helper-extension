@@ -16,7 +16,7 @@ export function useLogContext() {
 
 export function LogProvider (props: ParentProps) {
   const [logValues, setLogValues] = createSignal([])
-  const addLogValue = (value) => setLogValues([...logValues(), value])
+  const addLogValue = (value: number) => setLogValues([...logValues(), value])
   const removeLastLogValue = () => setLogValues(logValues().toSpliced(0, -1))
   const clearLogValues = () => setLogValues([])
 

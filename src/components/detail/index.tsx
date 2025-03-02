@@ -23,50 +23,50 @@ export default function Detail() {
             <ul class="flex flex-col gap-2 p-0">
                 <li class="flex items-center gap-2">
                     <span
-                        class="text-sm px-1 py-0.5 bg-amber-50 border border-zinc-500 rounded-lg font-mono text-black/70 data-[isPressed=true]:bg-emerald-500 data-[isPressed=true]:border-1 data-[isPressed=true]:border-emerald-900"
+                        class="text-md px-1 py-0.5 bg-amber-50 border border-zinc-500 rounded-lg font-mono text-black/70 data-[isPressed=true]:bg-emerald-500 data-[isPressed=true]:border-1 data-[isPressed=true]:border-emerald-900"
                         data-isPressed={isCtrlPressed()}>
                         Crtl
                     </span>
-                    <span class="text-sm text-black/80">para selecionar os números</span>
+                    <span class="text-md text-black/80">para selecionar os números</span>
                 </li>
                 <li class="flex items-center gap-2">
-                    <Switch fallback={<span class="text-sm px-1 border border-zinc-500 py-0.5 bg-amber-50 rounded-lg font-mono text-black/70">N/A</span>}>
+                    <Switch fallback={<span class="text-md px-1 border border-zinc-500 py-0.5 bg-amber-50 rounded-lg font-mono text-black/70">N/A</span>}>
                         <Match when={operator() === Operator.ADD}>
-                            <span class="text-sm px-1 border border-zinc-500 w-10 flex justify-center items-center py-0.5 bg-emerald-500 rounded-lg font-bold font-mono text-black/70">{operator()}</span>
+                            <span class="text-md px-1 border border-zinc-500 w-10 flex justify-center items-center py-0.5 bg-emerald-500 rounded-lg font-bold font-mono text-black/70">{operator()}</span>
                         </Match>
                         <Match when={operator() === Operator.SUB}>
-                            <span class="text-sm px-1 border border-zinc-500 w-10 flex justify-center items-center py-0.5 bg-blue-500 rounded-lg font-bold font-mono text-black/70">{operator()}</span>
+                            <span class="text-md px-1 border border-zinc-500 w-10 flex justify-center items-center py-0.5 bg-blue-500 rounded-lg font-bold font-mono text-black/70">{operator()}</span>
                         </Match>
                         <Match when={operator() === Operator.MUL}>
-                            <span class="text-sm px-1 border border-zinc-500 w-10 flex justify-center items-center py-0.5 bg-amber-500 rounded-lg font-bold font-mono text-black/70">x</span>
+                            <span class="text-md px-1 border border-zinc-500 w-10 flex justify-center items-center py-0.5 bg-amber-500 rounded-lg font-bold font-mono text-black/70">x</span>
                         </Match>
                         <Match when={operator() === Operator.DIV}>
-                            <span class="text-sm px-1 border border-zinc-500 w-10 flex justify-center items-center py-0.5 bg-fuchsia-900 rounded-lg font-bold font-mono text-white/70">÷</span>
+                            <span class="text-md px-1 border border-zinc-500 w-10 flex justify-center items-center py-0.5 bg-fuchsia-900 rounded-lg font-bold font-mono text-white/70">÷</span>
                         </Match>
                     </Switch>
-                    <span class="text-sm text-black/80">operador selecionado (+,-,*,/)</span>
+                    <span class="text-md text-black/80">operador selecionado (+,-,*,/)</span>
                 </li>
                 <Switch>
                     <Match when={!isMinimized()}>
                         <li class="flex items-center gap-2">
-                            <span class="text-sm px-1 border border-zinc-500 py-0.5 bg-amber-50 rounded-lg font-mono text-black/70">Esc</span>
-                            <span class="text-sm text-black/80">para restaurar os valores</span>
+                            <span class="text-md px-1 border border-zinc-500 py-0.5 bg-amber-50 rounded-lg font-mono text-black/70">Esc</span>
+                            <span class="text-md text-black/80">para restaurar os valores</span>
                         </li>
                         <li class="flex items-center gap-2">
-                            <span class="text-sm px-1 border border-zinc-500 py-0.5 bg-amber-50 rounded-lg font-mono text-black/70">Crtl+Shift+Y</span>
-                            <span class="text-sm text-black/80">para ativar a extensão</span>
+                            <span class="text-md px-1 border border-zinc-500 py-0.5 bg-amber-50 rounded-lg font-mono text-black/70">Crtl+Shift+Y</span>
+                            <span class="text-md text-black/80">para ativar a extensão</span>
                         </li>
                         <li class="flex items-center gap-2">
-                            <span class="text-sm px-1 border border-zinc-500 py-0.5 bg-amber-50 rounded-lg font-mono text-black/70">Crtl+Shift+U</span>
-                            <span class="text-sm text-black/80">para desativar a extensão</span>
+                            <span class="text-md px-1 border border-zinc-500 py-0.5 bg-amber-50 rounded-lg font-mono text-black/70">Crtl+Shift+U</span>
+                            <span class="text-md text-black/80">para desativar a extensão</span>
                         </li>
                         <li class="flex items-center gap-2">
-                            <span class="text-sm px-1 border border-zinc-500 py-0.5 bg-amber-50 rounded-lg font-mono text-black/70">Crtl+Shift+L</span>
-                            <span class="text-sm text-black/80">para minimizar/maximizar o histórico</span>
+                            <span class="text-md px-1 border border-zinc-500 py-0.5 bg-amber-50 rounded-lg font-mono text-black/70">Crtl+Shift+L</span>
+                            <span class="text-md text-black/80">para minimizar/maximizar o histórico</span>
                         </li>
                         <li class="flex items-center gap-2">
-                            <span class="text-sm px-1 border border-zinc-500 py-0.5 bg-amber-50 rounded-lg font-mono text-black/70">Crtl+Shift+Z</span>
-                            <span class="text-sm text-black/80">para minimizar/maximizar a ajuda</span>
+                            <span class="text-md px-1 border border-zinc-500 py-0.5 bg-amber-50 rounded-lg font-mono text-black/70">Crtl+Shift+Z</span>
+                            <span class="text-md text-black/80">para minimizar/maximizar a ajuda</span>
                         </li>
                     </Match>
                 </Switch>
@@ -74,9 +74,9 @@ export default function Detail() {
             <Switch>
                 <Match when={!isMinimized()}>
                     <p class="flex gap-2 items-center">
-                        <span class="text-sm text-black/80">Desenvolvido por</span>
+                        <span class="text-md text-black/80">Desenvolvido por</span>
                         <a href="http://www.linkedin.com/in/adaneinstein" target="_blank" rel="noopener noreferrer">
-                            <span class="text-sm font-mono text-blue-800 underline">AdanEinstein</span>
+                            <span class="text-md font-mono text-blue-800 underline">AdanEinstein</span>
                         </a>
                     </p>
                 </Match>

@@ -13,7 +13,7 @@ export default function Result() {
 
     return (
         <div id="calc-helper-result" class={container} style={{ "z-index": 1000, position: "fixed" }}>
-            <span class="text-sm text-black/80">Total:</span> {valueComputed}
+            <span class="text-md text-black/80">Total:</span> {valueComputed}
         </div>
     );
 }

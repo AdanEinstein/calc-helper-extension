@@ -19,7 +19,7 @@ export default function Log() {
         <Switch>
             <Match when={!isMinimized()}>
                 <div class={container} style={{ "z-index": 1000, position: "fixed" }}>
-                    <p class="text-sm text-black/80">Histórico</p>
+                    <p class="text-md text-black/80">Histórico</p>
                     <div class="flex gap-2 p-0 overflow-x-scroll scrollbar-hide">
                         <For each={logValues().toReversed()}>
                             {(logValue) => (
