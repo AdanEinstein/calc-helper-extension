@@ -1,4 +1,4 @@
-import { createEffect, createSignal, Match, Switch } from "solid-js";
+import { createSignal, Match, onMount, Show, Switch } from "solid-js";
 import { twMerge } from "tailwind-merge";
 import { useCrtlContext } from "../../providers/CtrlProvider";
 import { Operator, useOperatorContext } from "../../providers/OperatorProvider";
@@ -11,11 +11,11 @@ export default function Detail() {
     const { isCtrlPressed } = useCrtlContext()
     const { operator } = useOperatorContext()
 
-    createEffect(() => {
+    onMount(() => {
         window.addEventListener("message", (event) => {
             if (event.source !== window) return;
             if (event.data.action === "minimize_details") setIsMinimized(!isMinimized());
-        });
+        }, { once: true });
     })
 
     return (
@@ -46,41 +46,37 @@ export default function Detail() {
                     </Switch>
                     <span class="text-md text-black/80">operador selecionado (+,-,*,/)</span>
                 </li>
-                <Switch>
-                    <Match when={!isMinimized()}>
-                        <li class="flex items-center gap-2">
-                            <span class="text-md px-1 border border-zinc-500 py-0.5 bg-amber-50 rounded-lg font-mono text-black/70">Esc</span>
-                            <span class="text-md text-black/80">para restaurar os valores</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-md px-1 border border-zinc-500 py-0.5 bg-amber-50 rounded-lg font-mono text-black/70">Crtl+Shift+Y</span>
-                            <span class="text-md text-black/80">para ativar a extensão</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-md px-1 border border-zinc-500 py-0.5 bg-amber-50 rounded-lg font-mono text-black/70">Crtl+Shift+U</span>
-                            <span class="text-md text-black/80">para desativar a extensão</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-md px-1 border border-zinc-500 py-0.5 bg-amber-50 rounded-lg font-mono text-black/70">Crtl+Shift+L</span>
-                            <span class="text-md text-black/80">para minimizar/maximizar o histórico</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-md px-1 border border-zinc-500 py-0.5 bg-amber-50 rounded-lg font-mono text-black/70">Crtl+Shift+Z</span>
-                            <span class="text-md text-black/80">para minimizar/maximizar a ajuda</span>
-                        </li>
-                    </Match>
-                </Switch>
+                <Show when={!isMinimized()}>
+                    <li class="flex items-center gap-2">
+                        <span class="text-md px-1 border border-zinc-500 py-0.5 bg-amber-50 rounded-lg font-mono text-black/70">Esc</span>
+                        <span class="text-md text-black/80">para restaurar os valores</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span class="text-md px-1 border border-zinc-500 py-0.5 bg-amber-50 rounded-lg font-mono text-black/70">Crtl+Shift+Y</span>
+                        <span class="text-md text-black/80">para ativar a extensão</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span class="text-md px-1 border border-zinc-500 py-0.5 bg-amber-50 rounded-lg font-mono text-black/70">Crtl+Shift+U</span>
+                        <span class="text-md text-black/80">para desativar a extensão</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span class="text-md px-1 border border-zinc-500 py-0.5 bg-amber-50 rounded-lg font-mono text-black/70">Crtl+Shift+L</span>
+                        <span class="text-md text-black/80">para minimizar/maximizar o histórico</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span class="text-md px-1 border border-zinc-500 py-0.5 bg-amber-50 rounded-lg font-mono text-black/70">Crtl+Shift+Z</span>
+                        <span class="text-md text-black/80">para minimizar/maximizar a ajuda</span>
+                    </li>
+                </Show>
             </ul>
-            <Switch>
-                <Match when={!isMinimized()}>
-                    <p class="flex gap-2 items-center">
-                        <span class="text-md text-black/80">Desenvolvido por</span>
-                        <a href="http://www.linkedin.com/in/adaneinstein" target="_blank" rel="noopener noreferrer">
-                            <span class="text-md font-mono text-blue-800 underline">AdanEinstein</span>
-                        </a>
-                    </p>
-                </Match>
-            </Switch>
+            <Show when={!isMinimized()}>
+                <p class="flex gap-2 items-center">
+                    <span class="text-md text-black/80">Desenvolvido por</span>
+                    <a href="http://www.linkedin.com/in/adaneinstein" target="_blank" rel="noopener noreferrer">
+                        <span class="text-md font-mono text-blue-800 underline">AdanEinstein</span>
+                    </a>
+                </p>
+            </Show>
         </div>
     );
 }
