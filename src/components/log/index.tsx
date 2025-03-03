@@ -1,4 +1,4 @@
-import { createSignal, For, onMount, Show } from "solid-js";
+import { createEffect, createSignal, For, onMount, Show } from "solid-js";
 import { twMerge } from "tailwind-merge";
 import { useLogContext } from "../../providers/LogProvider";
 
@@ -8,11 +8,11 @@ export default function Log() {
     const { logValues } = useLogContext()
     const [isMinimized, setIsMinimized] = createSignal(false);
 
-    onMount(() => {
+    createEffect(() => {
         window.addEventListener("message", (event) => {
             if (event.source !== window) return;
             if (event.data.action === "toggle_log") setIsMinimized(!isMinimized());
-        }, { once: true });
+        });
     })
 
     return (

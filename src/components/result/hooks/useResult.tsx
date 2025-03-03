@@ -39,7 +39,7 @@ export default function useResult() {
                     [Operator.SUB]: () => result() + lastValue,
                     [Operator.MUL]: () => result() / lastValue,
                     [Operator.DIV]: () => result() * lastValue,
-                }[operator]())
+                }[operator]?.())
             }
         },
     }
@@ -54,12 +54,11 @@ export default function useResult() {
                 [Operator.SUB]: () => setOperator(Operator.SUB),
                 [Operator.MUL]: () => setOperator(Operator.MUL),
                 [Operator.DIV]: () => setOperator(Operator.DIV),
-            }[event.key])()
-        }, { once: true });
+            }[event.key])?.()
+        });
 
         document.addEventListener("click", (event) => {
             if (!isCtrlPressed() && !operator()) return
-
             const element = (event.target as Element)
             const text = element?.innerHTML.replaceAll(/[A-Za-z.]+/gm, "").replace(',', '.');
             const value = parseInt(text, 10);
@@ -75,7 +74,7 @@ export default function useResult() {
                 [Operator.MUL]: () => setResult(result() * value),
                 [Operator.DIV]: () => setResult(result() / value),
             }[operator()])()
-        }, { once: true });
+        });
     })
 
     return { result }

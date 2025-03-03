@@ -1,4 +1,4 @@
-import { createSignal, Match, onMount, Show, Switch } from "solid-js";
+import { createEffect, createSignal, Match, onMount, Show, Switch } from "solid-js";
 import { twMerge } from "tailwind-merge";
 import { useCrtlContext } from "../../providers/CtrlProvider";
 import { Operator, useOperatorContext } from "../../providers/OperatorProvider";
@@ -11,11 +11,11 @@ export default function Detail() {
     const { isCtrlPressed } = useCrtlContext()
     const { operator } = useOperatorContext()
 
-    onMount(() => {
+    createEffect(() => {
         window.addEventListener("message", (event) => {
             if (event.source !== window) return;
             if (event.data.action === "minimize_details") setIsMinimized(!isMinimized());
-        }, { once: true });
+        });
     })
 
     return (
