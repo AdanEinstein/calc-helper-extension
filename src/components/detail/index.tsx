@@ -3,7 +3,12 @@ import { twMerge } from "tailwind-merge";
 import { useCrtlContext } from "../../providers/CtrlProvider";
 import { Operator, useOperatorContext } from "../../providers/OperatorProvider";
 
-const container = twMerge(['absolute bottom-0.5 left-0.5', 'p-2', 'bg-zinc-200/95', 'border-2 border-zinc-400 rounded-lg', 'flex flex-col']);
+const container = twMerge([
+    'fixed bottom-0.5 left-0.5 z-[10000000]', 
+    'p-2', 
+    'bg-zinc-200/95', 
+    'border-2 border-zinc-400 rounded-lg', 
+    'flex flex-col']);
 
 export default function Detail() {
     const [isMinimized, setIsMinimized] = createSignal(false);
@@ -19,7 +24,7 @@ export default function Detail() {
     })
 
     return (
-        <div id="calc-helper-detail" class={container} style={{ "z-index": 1000, position: "fixed" }}>
+        <div id="calc-helper-detail" class={container}>
             <ul class="flex flex-col gap-2 p-0">
                 <li class="flex items-center gap-2">
                     <span
