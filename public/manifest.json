@@ -1,8 +1,12 @@
 {
     "manifest_version": 3,
     "name": "Calculadora Embutida",
-    "version": "1.0",
+    "version": "1.0.2",
     "description": "Uma calculadora que interage com a página atual aberta.",
+    "icons": {
+        "48": "calc48.png",
+        "128": "calc128.png"
+    },
     "permissions": [
         "activeTab",
         "scripting"
@@ -17,13 +21,6 @@
             ]
         }
     ],
-    "action": {
-        "default_icon": {
-            "16": "calc.svg",
-            "48": "calc.svg",
-            "128": "calc.svg"
-        }
-    },
     "content_scripts": [
         {
             "matches": [
